@@ -52,7 +52,7 @@ class cmd(Command):
                 reason=f"Report Canceled - {message.author}",
             )
             await member.send(
-                "Your report has been canseled. Sorry for the incontinence. Your timeout will be lifted in 3 seconds."
+                "Your report has been canceled. Sorry for the inconvenience. Your timeout will be lifted shortly."
             )
             return
 
@@ -82,7 +82,7 @@ class cmd(Command):
                 reason=f"Report Canceled - {message.author}",
             )
             await member.send(
-                "Your report has been canseled. Sorry for the incontinence. Your timeout will be lifted in 3 seconds."
+                "Your report has been canceled. Sorry for the inconvenience. Your timeout will be lifted shortly."
             )
             return
 
@@ -96,7 +96,7 @@ class cmd(Command):
             )
             await msg.channel.send("Report has been posted")
         else:
-            await msg.channel.send("Report Canceled")
+            await msg.channel.send("Report has been canceled")
             # Remove timeout
             await member.timeout(
                 datetime.timedelta(seconds=3),
