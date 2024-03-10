@@ -35,6 +35,7 @@ class cmd(Command):
 
     async def execute(self, arguments, message) -> None:
         user = message.author if not len(arguments) else arguments[0]
+        username = message.author.name if not len(arguments) else arguments[0]
 
         async with message.channel.typing():
             result = await self.db.raw_exec_select(
@@ -67,7 +68,7 @@ class cmd(Command):
                     user_xp=result[0],
                     next_xp=result[1] * 25 + 100,
                     server_position=rank,
-                    user_name=str(user),
+                    user_name=username,
                     user_status=str(user.status),
                     font_color=await self.get_font_color(user.id),
                 )
